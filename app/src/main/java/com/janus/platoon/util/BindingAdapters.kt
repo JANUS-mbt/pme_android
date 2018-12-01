@@ -22,7 +22,7 @@ fun GoogleMap.addMarkersAndMoveCamera(context: Context, locations: List<Location
             .snippet(it.description)
             .icon(icon)
 
-        addMarker(markerOptions)
+        addMarker(markerOptions).tag = it.type
     }
 
     val bounds = latLngBoundsbuilder.build()

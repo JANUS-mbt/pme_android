@@ -37,8 +37,10 @@ class ChooseActivityFragment : BaseFragment<ChooseVM, FragmentMainBinding>(), On
         googleMap.addMarkersAndMoveCamera(context!!, locations)
 
         googleMap.setOnMarkerClickListener {
-
-            viewModel.setSelectedMarker(it)
+            when (it.tag as LocationType) {
+                LocationType.CURRENT -> return@setOnMarkerClickListener true
+                else -> viewModel.setSelectedMarker(it)
+            }
             return@setOnMarkerClickListener false
         }
     }

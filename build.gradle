@@ -8,7 +8,7 @@ buildscript {
 
         //compile
         compilesdkversion = 28
-        minsdkversion = 15
+        minsdkversion = 19
 
         //default configuration
         defConfig = {

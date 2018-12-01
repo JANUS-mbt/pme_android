@@ -33,10 +33,10 @@ class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapR
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         val locations = ArrayList<Location>()
-        locations.add(Location(10.0, 10.0, "name1", "desc1", LocationType.CURRENT))
-        locations.add(Location(11.0, 11.0, "name2", "desc2", LocationType.PLATOON))
-        locations.add(Location(12.0, 12.0, "name3", "desc3", LocationType.PLATOON))
-        locations.add(Location(13.0, 13.0, "name4", "desc4", LocationType.DESTINATION))
+        locations.add(Location(41.0049823,28.731987, "name1", "desc1", LocationType.CURRENT))
+        locations.add(Location(45.8401104,15.8242464, "name2", "desc2", LocationType.PLATOON))
+        locations.add(Location(48.1548256,11.4017511, "name3", "desc3", LocationType.PLATOON))
+        locations.add(Location(48.6431786,9.3470013, "name4", "desc4", LocationType.DESTINATION))
         mMap.addMarkersAndMoveCamera(context!!, locations)
 
     }

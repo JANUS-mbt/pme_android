@@ -7,7 +7,7 @@ import com.janus.platoon.di.scope.AppScope
 import com.janus.platoon.remote.*
 import com.janus.platoon.remote.ApiConstants.API_URL
 import com.janus.platoon.repo.TokenRepository
-import com.janus.platoon.ui.login.startMainActivity
+import com.janus.platoon.ui.main.startMainActivity
 import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import dagger.Module

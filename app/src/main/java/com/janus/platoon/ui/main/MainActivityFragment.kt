@@ -1,4 +1,4 @@
-package com.janus.platoon.ui.login
+package com.janus.platoon.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,7 +19,6 @@ import com.janus.platoon.vm.MainVM
 class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapReadyCallback {
     override val getLayoutId: Int = R.layout.fragment_main
     override val viewModelClass = MainVM::class.java
-    private lateinit var mMap: GoogleMap
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
@@ -31,13 +30,12 @@ class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapR
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
         val locations = ArrayList<Location>()
         locations.add(Location(41.0049823,28.731987, "name1", "desc1", LocationType.CURRENT))
         locations.add(Location(45.8401104,15.8242464, "name2", "desc2", LocationType.PLATOON))
         locations.add(Location(48.1548256,11.4017511, "name3", "desc3", LocationType.PLATOON))
         locations.add(Location(48.6431786,9.3470013, "name4", "desc4", LocationType.DESTINATION))
-        mMap.addMarkersAndMoveCamera(context!!, locations)
+        googleMap.addMarkersAndMoveCamera(context!!, locations)
 
     }
 }

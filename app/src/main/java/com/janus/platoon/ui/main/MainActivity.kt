@@ -1,4 +1,4 @@
-package com.janus.platoon.ui.login
+package com.janus.platoon.ui.main
 
 import android.content.Context
 import android.content.Intent

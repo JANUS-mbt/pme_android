@@ -1,6 +1,6 @@
 package com.janus.platoon.di.module
 
-import com.janus.platoon.ui.login.MainActivity
+import com.janus.platoon.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

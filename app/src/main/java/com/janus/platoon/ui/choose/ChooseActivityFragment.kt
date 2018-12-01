@@ -13,7 +13,6 @@ import com.janus.platoon.data.Location
 import com.janus.platoon.data.LocationType
 import com.janus.platoon.databinding.FragmentMainBinding
 import com.janus.platoon.util.addMarkersAndMoveCamera
-import com.janus.platoon.util.startNavigation
 import com.janus.platoon.vm.ChooseVM
 
 
@@ -38,7 +37,9 @@ class ChooseActivityFragment : BaseFragment<ChooseVM, FragmentMainBinding>(), On
         googleMap.addMarkersAndMoveCamera(context!!, locations)
 
         googleMap.setOnMarkerClickListener {
-            context!!.startNavigation(it.position)
+
+            viewModel.setSelectedMarker(it)
+            return@setOnMarkerClickListener false
         }
     }
 }

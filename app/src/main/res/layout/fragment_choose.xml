@@ -16,6 +16,27 @@
             android:layout_height="match_parent"
             tools:context=".ui.main.MainActivityFragment"
             tools:showIn="@layout/activity_main">
+        <android.support.constraint.Guideline
+                android:id="@+id/gd_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.9"
+        />
+        <android.support.constraint.Guideline
+                android:id="@+id/gd_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.2"
+        />
+        <android.support.constraint.Guideline
+                android:id="@+id/gd_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.8"
+        />
         <ProgressBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +55,19 @@
                   tools:context=".MainActivity"
                   android:name="com.google.android.gms.maps.SupportMapFragment"
         />
-
+        <Button
+                android:id="@+id/bt_signin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/find_optimal_route"
+                android:onClick="@{vm::performRoute}"
+                android:textColor="@color/textColorLight"
+                android:enabled="@{vm.position!=null}"
+                app:layout_constraintBottom_toBottomOf="@id/gd_bottom"
+                android:background="@drawable/bt_rounded"
+                app:layout_constraintLeft_toLeftOf="@id/gd_left"
+                app:layout_constraintRight_toRightOf="@id/gd_right"
+        />
         <android.support.constraint.Group
                 android:layout_width="0dp"
                 android:layout_height="0dp"

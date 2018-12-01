@@ -32,7 +32,7 @@ fun Context.bitmapDescriptorFromVector(vectorResId: Int): BitmapDescriptor {
 }
 
 fun Context.startNavigation(latLng: LatLng): Boolean {
-    val gmmIntentUri = Uri.parse("google.navigation:q=${latLng.latitude},${latLng.longitude}")
+    val gmmIntentUri = Uri.parse("google.navigation:mode=d&q=${latLng.latitude},${latLng.longitude}")
     val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
     mapIntent.setPackage("com.google.android.apps.maps")
     val mapAvailable = mapIntent.resolveActivity(packageManager) != null

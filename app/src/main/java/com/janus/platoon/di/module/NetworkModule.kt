@@ -2,14 +2,15 @@ package com.janus.platoon.di.module
 
 import android.content.Context
 import android.os.ConditionVariable
+import com.google.gson.Gson
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.janus.platoon.BuildConfig
 import com.janus.platoon.di.scope.AppScope
 import com.janus.platoon.remote.*
 import com.janus.platoon.remote.ApiConstants.API_URL
 import com.janus.platoon.repo.TokenRepository
-import com.janus.platoon.ui.main.startMainActivity
-import com.google.gson.Gson
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import com.janus.platoon.ui.main.MainActivity
+import com.janus.platoon.util.startActivityWithName
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
@@ -161,7 +162,7 @@ class NetworkModule {
     private fun resetApp(okHttpClient: OkHttpClient, tokenRepository: TokenRepository, context: Context) {
         okHttpClient.dispatcher().cancelAll()
         tokenRepository.clearTokens()
-        startMainActivity(context)
+        context.startActivityWithName(MainActivity::class.java, true)
     }
 
     @AppScope

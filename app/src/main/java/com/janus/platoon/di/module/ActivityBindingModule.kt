@@ -1,5 +1,6 @@
 package com.janus.platoon.di.module
 
+import com.janus.platoon.ui.choose.ChooseActivity
 import com.janus.platoon.ui.main.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -8,4 +9,7 @@ import dagger.android.ContributesAndroidInjector
 internal abstract class ActivityBindingModule {
     @ContributesAndroidInjector(modules = [FragmentBindingModule::class])
     internal abstract fun contributeMainActivity(): MainActivity
+
+    @ContributesAndroidInjector(modules = [FragmentBindingModule::class])
+    internal abstract fun contributeChooseActivity(): ChooseActivity
 }

@@ -1,4 +1,4 @@
-package com.janus.platoon.ui.main
+package com.janus.platoon.ui.choose
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,13 +13,13 @@ import com.janus.platoon.data.Location
 import com.janus.platoon.data.LocationType
 import com.janus.platoon.databinding.FragmentMainBinding
 import com.janus.platoon.util.addMarkersAndMoveCamera
-import com.janus.platoon.vm.MainVM
+import com.janus.platoon.vm.ChooseVM
 
 
-class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapReadyCallback {
-    override val getLayoutId: Int = R.layout.fragment_main
-    override val viewModelClass = MainVM::class.java
-    private lateinit var mMap: GoogleMap
+class ChooseActivityFragment : BaseFragment<ChooseVM, FragmentMainBinding>(), OnMapReadyCallback {
+    override val getLayoutId: Int = R.layout.fragment_choose
+    override val viewModelClass = ChooseVM::class.java
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -30,13 +30,13 @@ class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapR
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
         val locations = ArrayList<Location>()
-        locations.add(Location(41.0049823,28.731987, "name1", "desc1", LocationType.CURRENT))
-        locations.add(Location(48.6431786,9.3470013, "name4", "desc4", LocationType.DESTINATION))
+        locations.add(Location(41.0049823, 28.731987, "name1", "desc1", LocationType.CURRENT))
+        locations.add(Location(45.8401104, 15.8242464, "name2", "desc2", LocationType.PLATOON))
+        locations.add(Location(48.1548256, 11.4017511, "name3", "desc3", LocationType.PLATOON))
         googleMap.addMarkersAndMoveCamera(context!!, locations)
-    }
 
+    }
 }
 
 

@@ -1,20 +1,20 @@
 package com.janus.platoon.ui.login
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.janus.platoon.R
 import com.janus.platoon.base.BaseFragment
+import com.janus.platoon.data.Location
+import com.janus.platoon.data.LocationType
 import com.janus.platoon.databinding.FragmentMainBinding
+import com.janus.platoon.util.addMarkersAndMoveCamera
 import com.janus.platoon.vm.MainVM
+
 
 class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapReadyCallback {
     override val getLayoutId: Int = R.layout.fragment_main
@@ -32,11 +32,14 @@ class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapR
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val locations = ArrayList<Location>()
+        locations.add(Location(10.0, 10.0, "name1", "desc1", LocationType.CURRENT))
+        locations.add(Location(11.0, 11.0, "name2", "desc2", LocationType.PLATOON))
+        locations.add(Location(12.0, 12.0, "name3", "desc3", LocationType.PLATOON))
+        locations.add(Location(13.0, 13.0, "name4", "desc4", LocationType.DESTINATION))
+        mMap.addMarkersAndMoveCamera(context!!, locations)
 
     }
 }
+
+

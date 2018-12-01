@@ -7,6 +7,8 @@
         <variable
                 name="vm"
                 type="com.janus.platoon.vm.MainVM"/>
+        <import type="com.janus.platoon.util.Status"/>
+        <import type="android.view.View"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -44,8 +46,17 @@
                   tools:context=".MainActivity"
                   android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
+        <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/bt_signin"
+                android:visibility="@{vm.status==Status.IN_PROGRESS?View.VISIBLE:View.GONE}"
+        />
         <Button
-                android:id="@+id/my_rounded_sign_in_button"
+                android:id="@+id/bt_signin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/platoon_me"
@@ -55,6 +66,12 @@
                 android:background="@drawable/bt_rounded"
                 app:layout_constraintLeft_toLeftOf="@id/gd_left"
                 app:layout_constraintRight_toRightOf="@id/gd_right"
+        />
+        <android.support.constraint.Group
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:constraint_referenced_ids="map_fragment,bt_signin"
+                android:visibility="@{vm.status==Status.IN_PROGRESS?View.GONE:View.VISIBLE}"
         />
     </android.support.constraint.ConstraintLayout>
 </layout>

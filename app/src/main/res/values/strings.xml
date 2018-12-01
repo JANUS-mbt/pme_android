@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Platoon</string>
     <string name="title_activity_main">Map</string>
+    <string name="platoon_me">Platoon Me!</string>
 </resources>

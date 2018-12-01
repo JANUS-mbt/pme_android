@@ -13,6 +13,7 @@ import com.janus.platoon.data.Location
 import com.janus.platoon.data.LocationType
 import com.janus.platoon.databinding.FragmentMainBinding
 import com.janus.platoon.util.addMarkersAndMoveCamera
+import com.janus.platoon.util.setDefaults
 import com.janus.platoon.vm.MainVM
 
 
@@ -34,7 +35,9 @@ class MainActivityFragment : BaseFragment<MainVM, FragmentMainBinding>(), OnMapR
         val locations = ArrayList<Location>()
         locations.add(Location(41.0049823,28.731987, "name1", "desc1", LocationType.CURRENT))
         locations.add(Location(48.6431786,9.3470013, "name4", "desc4", LocationType.DESTINATION))
-        googleMap.addMarkersAndMoveCamera(context!!, locations)
+        googleMap.setDefaults()
+        val cameraUpdate = googleMap.addMarkersAndMoveCamera(context!!, locations)
+        googleMap.setOnMapClickListener { googleMap.animateCamera(cameraUpdate) }
     }
 
 }

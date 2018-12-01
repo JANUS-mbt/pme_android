@@ -11,9 +11,9 @@ import javax.inject.Inject
 
 class ChooseVM
 @Inject constructor() : BaseViewModel() {
-    val position=MutableLiveData<LatLng>()
+    val position = MutableLiveData<LatLng>()
     fun setSelectedMarker(marker: Marker?) {
-        position.postValue(marker!!.position)
+        position.postValue(if (marker != null) marker.position else null)
     }
 
     fun performRoute(view: View) {

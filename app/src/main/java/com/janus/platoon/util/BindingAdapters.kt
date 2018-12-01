@@ -1,6 +1,7 @@
 package com.janus.platoon.util
 
 import android.content.Context
+import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
@@ -10,7 +11,7 @@ import com.janus.platoon.R
 import com.janus.platoon.data.Location
 import com.janus.platoon.data.LocationType
 
-fun GoogleMap.addMarkersAndMoveCamera(context: Context, locations: List<Location>) {
+fun GoogleMap.addMarkersAndMoveCamera(context: Context, locations: List<Location>): CameraUpdate? {
     val latLngBoundsbuilder = LatLngBounds.Builder()
     locations.forEach {
         val latLng = LatLng(it.lat, it.lon)
@@ -26,7 +27,17 @@ fun GoogleMap.addMarkersAndMoveCamera(context: Context, locations: List<Location
     }
 
     val bounds = latLngBoundsbuilder.build()
-    animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 160));
+    val newLatLngBounds = CameraUpdateFactory.newLatLngBounds(bounds, 160)
+    animateCamera(newLatLngBounds)
+    return newLatLngBounds
+}
+
+fun GoogleMap.setDefaults() {
+    uiSettings.let {
+        it.setAllGesturesEnabled(false)
+        it.isMapToolbarEnabled = false
+    }
+
 }
 
 private fun locationToIcRes(it: Location): Int {

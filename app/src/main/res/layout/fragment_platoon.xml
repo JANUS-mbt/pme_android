@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintGuide_percent="0.65"
         />
         <android.support.constraint.Guideline
                 android:id="@+id/gd_left"
@@ -51,11 +51,10 @@
                 android:layout_height="wrap_content"
                 android:text="Platoon Connected"
                 android:gravity="center"
-                android:textAlignment="center"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/gd_center"
-        />
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:fontFamily="monospace"/>
 
         <Button
                 android:id="@+id/bt_message"

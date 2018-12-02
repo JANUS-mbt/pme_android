@@ -42,7 +42,7 @@ fun GoogleMap.setDefaults() {
 
 private fun locationToIcRes(it: Location): Int {
     val vectorResId = when (it.type) {
-        LocationType.CURRENT -> R.drawable.ic_current
+        LocationType.CURRENT -> R.drawable.ic_placeholder
         LocationType.PLATOON -> R.drawable.ic_truck
         LocationType.DESTINATION -> R.drawable.ic_flag
     }

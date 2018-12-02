@@ -5,7 +5,8 @@ import android.view.View
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.janus.platoon.base.BaseViewModel
-import com.janus.platoon.util.startNavigation
+import com.janus.platoon.ui.platoon.PlatoonActivity
+import com.janus.platoon.util.startActivityWithName
 import javax.inject.Inject
 
 

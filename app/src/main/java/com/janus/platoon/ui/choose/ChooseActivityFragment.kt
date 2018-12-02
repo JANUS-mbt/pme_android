@@ -11,13 +11,13 @@ import com.janus.platoon.R
 import com.janus.platoon.base.BaseFragment
 import com.janus.platoon.data.Location
 import com.janus.platoon.data.LocationType
-import com.janus.platoon.databinding.FragmentMainBinding
+import com.janus.platoon.databinding.FragmentChooseBinding
 import com.janus.platoon.util.addMarkersAndMoveCamera
 import com.janus.platoon.util.setDefaults
 import com.janus.platoon.vm.ChooseVM
 
 
-class ChooseActivityFragment : BaseFragment<ChooseVM, FragmentMainBinding>(), OnMapReadyCallback {
+class ChooseActivityFragment : BaseFragment<ChooseVM, FragmentChooseBinding>(), OnMapReadyCallback {
     override val getLayoutId: Int = R.layout.fragment_choose
     override val viewModelClass = ChooseVM::class.java
 

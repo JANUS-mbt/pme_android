@@ -18,19 +18,16 @@
                 android:name="com.google.android.geo.API_KEY"
                 android:value="@string/google_maps_key"/>
 
-        <activity
-                android:name=".ui.main.MainActivity"
-                android:label="@string/title_activity_main">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name=".ui.choose.ChooseActivity"
-                android:label="@string/title_activity_main">
-        </activity>
+        <activity android:name=".ui.choose.ChooseActivity"/>
+        <activity android:name=".ui.platoon.PlatoonActivity"/>
+
     </application>
 
 </manifest>

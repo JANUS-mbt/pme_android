@@ -6,6 +6,7 @@ import com.janus.platoon.base.ViewModelFactory
 import com.janus.platoon.di.mapkey.ViewModelKey
 import com.janus.platoon.vm.ChooseVM
 import com.janus.platoon.vm.MainVM
+import com.janus.platoon.vm.PlatoonVM
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -22,6 +23,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ChooseVM::class)
     internal abstract fun bindChooseVM(viewModel: ChooseVM): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PlatoonVM::class)
+    internal abstract fun bindPlatoonVM(viewModel: PlatoonVM): ViewModel
 
     @Binds
     internal abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

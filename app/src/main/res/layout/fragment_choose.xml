@@ -52,6 +52,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:id="@+id/map_fragment"
+                  android:fontFamily="monospace"
                   tools:context=".MainActivity"
                   android:name="com.google.android.gms.maps.SupportMapFragment"
         />
@@ -65,6 +66,7 @@
                 android:enabled="@{vm.position!=null}"
                 app:layout_constraintBottom_toBottomOf="@id/gd_bottom"
                 android:background="@drawable/bt_rounded"
+                android:fontFamily="monospace"
                 app:layout_constraintLeft_toLeftOf="@id/gd_left"
                 app:layout_constraintRight_toRightOf="@id/gd_right"
         />

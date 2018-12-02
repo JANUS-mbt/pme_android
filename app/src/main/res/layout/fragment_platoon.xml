@@ -67,6 +67,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/bt_break"
+                android:fontFamily="monospace"
         />
 
         <Button
@@ -80,6 +81,7 @@
                 app:layout_constraintLeft_toRightOf="@id/bt_message"
                 app:layout_constraintRight_toLeftOf="@+id/bt_help"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="monospace"
         />
         <Button
                 android:lines="2"
@@ -92,6 +94,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/bt_break"
                 app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="monospace"
         />
 
 

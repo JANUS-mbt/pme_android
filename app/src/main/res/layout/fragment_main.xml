@@ -44,6 +44,7 @@
                   android:layout_height="match_parent"
                   android:id="@+id/map_fragment"
                   tools:context=".MainActivity"
+                  android:fontFamily="monospace"
                   android:name="com.google.android.gms.maps.SupportMapFragment"/>
 
         <ProgressBar
@@ -66,7 +67,7 @@
                 android:background="@drawable/bt_rounded"
                 app:layout_constraintLeft_toLeftOf="@id/gd_left"
                 app:layout_constraintRight_toRightOf="@id/gd_right"
-        />
+                android:fontFamily="monospace"  />
         <android.support.constraint.Group
                 android:layout_width="0dp"
                 android:layout_height="0dp"

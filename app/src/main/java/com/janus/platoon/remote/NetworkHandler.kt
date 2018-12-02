@@ -1,6 +1,7 @@
 package com.janus.platoon.remote
 
 import com.janus.platoon.data.OAuthResponse
+import com.janus.platoon.data.Vehicle
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -21,6 +22,15 @@ class NetworkHandler
         return sendRequest(api.refreshToken())
     }
     //endregion
+
+    //region authorized
+
+    fun getVehicles(): Flowable<DataHolder<List<Vehicle>>> {
+        return sendRequest(api.getVehicles())
+    }
+    //endregion
+
+
 
     private fun <T> sendRequest(call: Flowable<T>): Flowable<DataHolder<T>> {
         return call

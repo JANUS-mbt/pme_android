@@ -31,12 +31,8 @@ class ChooseActivityFragment : BaseFragment<ChooseVM, FragmentChooseBinding>(), 
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        val locations = ArrayList<Location>()
-        locations.add(Location(41.0049823, 28.731987, "name1", "desc1", LocationType.CURRENT))
-        locations.add(Location(45.8401104, 15.8242464, "name2", "desc2", LocationType.PLATOON))
-        locations.add(Location(48.1548256, 11.4017511, "name3", "desc3", LocationType.PLATOON))
         googleMap.setDefaults()
-        val cameraUpdate = googleMap.addMarkersAndMoveCamera(context!!, locations)
+        val cameraUpdate = googleMap.addMarkersAndMoveCamera(context!!, viewModel.vehicles.value!!)
         googleMap.setOnMarkerClickListener {
             when (it.tag as LocationType) {
                 LocationType.PLATOON -> viewModel.setSelectedMarker(it)
